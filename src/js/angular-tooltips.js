@@ -134,6 +134,7 @@
         theTooltip = $compile(htmlTemplate)($scope);
 
         theTooltip.addClass(className);
+        theTooltip.css("display", "none");
 
         body.append(theTooltip);
 
@@ -150,6 +151,7 @@
 
             theTooltip.css('visibility', 'visible');
 
+
             height = thisElement[0].offsetHeight;
             width = thisElement[0].offsetWidth;
 
@@ -159,8 +161,10 @@
 
             $scope.parseSpeed();
             $scope.tooltipPositioning(tooltipSide);
+            theTooltip.css('display', 'none');
           } else {
             theTooltip.css('visibility', 'hidden');
+            theTooltip.css('display', 'none');
           }
         };
 
